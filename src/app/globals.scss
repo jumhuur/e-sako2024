@@ -1,0 +1,588 @@
+//variables
+$theme: "dark";
+$main-c: #1d1b1b;
+$btn_c: #4c40f7;
+$btn_c_h: #5c50fc;
+$color1: #2c2a2a;
+$color2: #ffad60;
+$color3: #a9a9a9;
+$color4: #fff;
+// all mixins
+@mixin reset_form($size, $color, $mrtb) {
+  padding-left: 15px;
+  padding-right: 15px;
+  @include qoraal-p($size, $color);
+  margin: $mrtb 0px;
+  border: none;
+  outline: none;
+  text-transform: lowercase;
+  &::placeholder {
+    text-transform: capitalize;
+  }
+}
+
+@mixin Shadaw_buttom {
+  box-shadow: 0px 0px 12px 0px #d7d7d7a7;
+}
+
+@mixin dyshadow($kaw, $laba, $sadex, $afar) {
+  box-shadow: $kaw $laba $sadex $afar #d7d7d7a7;
+}
+@mixin qoraal-p($size, $color) {
+  font-size: $size;
+  color: $color;
+  letter-spacing: 1.6;
+  line-height: 1.6;
+  text-wrap: balance;
+}
+
+@mixin Totile-H($size, $color) {
+  font-size: $size;
+  color: $color;
+  letter-spacing: 1.5;
+  line-height: 1.6;
+  font-weight: normal;
+  text-wrap: balance;
+}
+
+@mixin btn-web($Dherer) {
+  width: $Dherer;
+  height: 45px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  color: $color4;
+  font-size: 16px;
+  background: $btn_c;
+  transition: all 0.4s ease-in-out;
+  text-transform: capitalize;
+  &:hover {
+    background-color: $btn_c_h;
+    transition: all 0.4s ease-in-out;
+    transform: translate(4px, 0px);
+  }
+}
+
+@mixin flex-box($dir) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap $dir;
+  text-transform: capitalize;
+}
+@mixin dynamic-flex($js, $at, $dir, $dhex) {
+  display: flex;
+  justify-content: $js;
+  align-items: $at;
+  flex-flow: wrap $dir;
+  gap: $dhex;
+  text-transform: capitalize;
+}
+
+@mixin Break-Points($Point) {
+  @if ($Point == xsm) {
+    @media (min-width: 200px) and (max-width: 576px) {
+      @content;
+    }
+  } @else if($Point == sm) {
+    @media (min-width: 576px) and (max-width: 768px) {
+      @content;
+    }
+  } @else if($Point == md) {
+    @media (min-width: 768px) and (max-width: 992px) {
+      @content;
+    }
+  } @else if($Point == lg) {
+    @media (min-width: 992px) and (max-width: 1200px) {
+      @content;
+    }
+  } @else if($Point == xlg) {
+    @media (min-width: 1200px) and (max-width: 1400px) {
+      @content;
+    }
+  } @else if($Point == xxlg) {
+    @media (min-width: 1400px) {
+      @content;
+    }
+  }
+}
+
+// placeholders
+
+%img {
+  position: relative !important;
+  object-fit: cover;
+}
+
+%Gradient {
+  background-image: linear-gradient(360deg, #004bd6, #170148);
+}
+
+%reset-ul {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  li {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    text-transform: capitalize;
+    text-transform: capitalize;
+    list-style: none;
+
+    a {
+      text-decoration: none;
+      width: 100%;
+      display: block;
+      text-transform: capitalize;
+    }
+  }
+}
+
+%reset-link {
+  text-decoration: none;
+  width: 100%;
+  display: block;
+  height: 100%;
+}
+
+%reset-link_in {
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+}
+
+%over_velow_elm {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+%over_vallow_set {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  // background-color: $color_over;
+  z-index: 9999999999999;
+  top: 0;
+  bottom: 0;
+  -webkit-backdrop-filter: blur(12px);
+  -moz-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  overflow: hidden;
+  visibility: hidden;
+  @include dynamic-flex(center, center, column, 0px);
+}
+
+%colse_btn {
+  width: 25px;
+  height: 25px;
+  // background-color: $colose_color;
+  border-radius: 50%;
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  z-index: 99999;
+  cursor: pointer;
+  // color: $bg-main;
+  @include dynamic-flex(center, center, column, 0px);
+}
+
+// controll if else
+
+* {
+  scrollbar-color: $main-c;
+  scrollbar-width: thin;
+}
+
+// html {
+//   scroll-behavior: smooth;
+// }
+
+body {
+  background-color: $main-c;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  user-select: $btn_c;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: $color1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $color1;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $main-c;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: $main-c;
+}
+.haye {
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.xajiye {
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+// nav style
+div.navraber {
+  width: 100%;
+  height: 80px;
+  @include dynamic-flex(center, center, center, row);
+  position: sticky;
+  top: 0px;
+  // filter: blur(8px);
+  // -webkit-filter: blur(8px);
+  backdrop-filter: blur(20px);
+  // background-color: $main-c;
+  z-index: 999;
+  div.navlinks {
+    width: 100%;
+    height: 100%;
+    @include dynamic-flex(center, center, center, row);
+    div.logo {
+      width: 15%;
+      height: 100%;
+      position: relative;
+      @include flex-box(row);
+      a {
+        width: 100%;
+        height: 100%;
+        color: $color4;
+        text-decoration: none;
+        @include flex-box(row);
+        img {
+          position: relative !important;
+          @extend %img;
+        }
+      }
+    }
+    div.links {
+      width: 70%;
+      height: 100%;
+      position: relative;
+      @include flex-box(row);
+      ul {
+        width: 70%;
+        height: 100%;
+        position: relative;
+        @include flex-box(row);
+        @extend %reset-ul;
+        li {
+          height: 100%;
+          padding: 0px 10px;
+          @include flex-box(row);
+          font-weight: 500;
+          @include qoraal-p(1rem, $color4);
+          a {
+            @include qoraal-p(1rem, $color4);
+            text-decoration: none;
+          }
+        }
+      }
+      div.btn_actions {
+        height: 100%;
+        @include flex-box(column);
+        width: 20%;
+
+        button.action_nav {
+          @include btn-web(85%);
+          background-color: transparent;
+          color: $color2;
+          border: solid 1.5px $color2;
+          &:hover {
+            background-color: $color2;
+            color: $color4;
+          }
+        }
+      }
+    }
+  }
+}
+
+// home herro
+
+div.home {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  @include flex-box(row);
+  div.hero {
+    width: 80%;
+    height: 100%;
+    position: relative;
+    @include flex-box(row);
+    div.text_hero {
+      width: 100%;
+      height: 100%;
+      padding-top: 10%;
+      position: relative;
+      @include flex-box(row);
+
+      h2 {
+        @include Totile-H(3.2rem, $color4);
+        font-weight: 600;
+        text-align: center;
+      }
+
+      p {
+        @include qoraal-p(1rem, $color4);
+        padding: 0% 0px;
+        font-weight: normal;
+        margin-top: 4%;
+        span {
+          @include qoraal-p(1.2rem, $btn_c);
+        }
+      }
+    }
+    button {
+      @include btn-web(20%);
+      margin: 4% 0px;
+    }
+    img.her_icons {
+      position: absolute;
+      &:nth-child(3) {
+        right: 0;
+        transform: rotate(91deg);
+        top: 10%;
+      }
+
+      &:nth-child(4) {
+        top: 10%;
+        right: -1%;
+        transform: rotate(91deg);
+      }
+      &:nth-child(5) {
+        left: 1%;
+        transform: rotate(64deg);
+        bottom: 4%;
+      }
+      &:nth-child(6) {
+        left: 1%;
+        transform: rotate(91deg);
+        bottom: 0;
+      }
+
+      &:nth-child(7) {
+        top: 10%;
+        left: 0;
+        transform: rotate(100deg);
+      }
+
+      &:nth-child(8) {
+        right: 0;
+        transform: rotate(60deg);
+        bottom: 0;
+      }
+    }
+  }
+}
+
+//sponser
+div.sponser {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  @include flex-box(column);
+  padding: 10px 0px;
+  div.text_sponser {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    @include flex-box(column);
+    margin-bottom: 20px;
+    h2 {
+      @include Totile-H(1.2rem, $color4);
+      margin-bottom: 4px;
+    }
+
+    p {
+      @include qoraal-p(1rem, $color3);
+      margin-bottom: 4px;
+    }
+  }
+  div.sponser_com_logos {
+    width: 90%;
+    height: 100%;
+    background-color: $color1;
+    @include dynamic-flex(center, center, center, 12%);
+    border-radius: 10px;
+    padding: 1% 0px;
+    div.logo_shirkad {
+      width: 100px;
+      height: 100px;
+      border-radius: 100%;
+      img {
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+// Qiimayaasha
+
+div.qiimayasha {
+  width: 100%;
+  height: 100%;
+  @include flex-box(column);
+  padding: 3% 0px;
+  div.text_an_title {
+    width: 60%;
+    height: 100%;
+    position: relative;
+    h2 {
+      @include Totile-H(1.5rem, $color4);
+      text-align: center;
+      font-weight: 500;
+    }
+  }
+
+  div.liiska_noocyada {
+    width: 100%;
+    height: 100%;
+    @include dynamic-flex(center, center, center, 20px);
+    flex-flow: wrap row;
+    margin: 15px 0px;
+    div.nooc {
+      width: calc(80% / 3);
+      height: 200px;
+      background-color: $color2;
+      border-radius: 5px;
+      background-color: $color4;
+      @include flex-box(column);
+      flex-flow: wrap column;
+      div.icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        display: inline;
+      }
+      div.qiimaha {
+        width: 100%;
+        height: 100%;
+        padding: 5px 0px;
+        h2 {
+          @include Totile-H(1.3rem, $color1);
+          font-weight: 500;
+        }
+        p {
+        }
+      }
+    }
+  }
+}
+
+// all media  responsive part
+
+@include Break-Points(xsm) {
+  .haye {
+    max-width: 540px;
+  }
+
+  .xajiye {
+    max-width: 540px;
+  }
+
+  .raber {
+    max-width: 540px;
+  }
+}
+@include Break-Points(sm) {
+  .haye {
+    max-width: 540px;
+  }
+  .xajiye {
+    max-width: 540px;
+    &.last_h {
+      max-width: 740px;
+    }
+  }
+
+  .raber {
+    &.dhash {
+      max-width: 750px;
+    }
+    max-width: 750px;
+  }
+}
+
+@include Break-Points(md) {
+  .haye {
+    max-width: 720px;
+  }
+
+  .xajiye {
+    max-width: 800px;
+  }
+
+  .raber {
+    &.dhash {
+      max-width: 950px;
+    }
+    max-width: 950px;
+  }
+}
+@include Break-Points(lg) {
+  .haye {
+    max-width: 960px;
+  }
+
+  .xajiye {
+    max-width: 1100px;
+  }
+
+  .raber {
+    max-width: 1100px;
+  }
+}
+@include Break-Points(xlg) {
+  .haye {
+    max-width: 1140px;
+  }
+
+  .xajiye {
+    max-width: 1300px;
+  }
+  .raber {
+    max-width: 1300px;
+  }
+}
+@include Break-Points(xxlg) {
+  .xajiye,
+  .haye,
+  .raber {
+    max-width: 1320px;
+  }
+}
