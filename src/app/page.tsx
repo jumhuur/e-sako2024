@@ -1,6 +1,9 @@
+import About from "@/components/AboutUs";
+import Footer from "@/components/Footer";
 import HomePage from "@/components/HomePage";
-import Qiimayasha from "@/components/Qiimayaasha";
+import Dhaqdhaqaaq from "@/components/dhaqdhaqaaq";
 import Nav from "@/components/nav";
+import Rate from "@/components/rate";
 import Sponserer from "@/components/saponserv";
 
 export default function Home() {
@@ -10,7 +13,10 @@ export default function Home() {
         <Nav />
         <HomePage />
         <Sponserer />
-        <Qiimayasha />
+        <Dhaqdhaqaaq />
+        <About />
+        <Rate />
+        <Footer />
       </div>
     </main>
   );

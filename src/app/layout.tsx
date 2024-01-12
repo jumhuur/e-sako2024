@@ -6,7 +6,7 @@ import "./css/all.min.css";
 const inter = Heebo({ subsets: ["latin"], weight: ["400", "500"] });
 
 export const metadata: Metadata = {
-  title: "e-sako | Xisaabinta Sakada Hab Waafaqsan Islaamka",
+  title: "E-sako | Xisaabinta Sakada Hab Waafaqsan Islaamka",
   description: "Xisaabinta Sakada Hab Waafaqsan Shareecada",
 };
 
