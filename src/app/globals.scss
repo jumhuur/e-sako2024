@@ -47,7 +47,7 @@ $color4: #fff;
 
 @mixin btn-web($Dherer) {
   width: $Dherer;
-  height: 45px;
+  height: 50px;
   border-radius: 5px;
   outline: none;
   border: none;
@@ -378,38 +378,86 @@ div.home {
     }
     img.her_icons {
       position: absolute;
-      &:nth-child(3) {
+      &.kaw {
         right: 0;
         transform: rotate(91deg);
         top: 10%;
       }
 
-      &:nth-child(4) {
+      &.laba {
         top: 10%;
         right: -1%;
         transform: rotate(91deg);
       }
-      &:nth-child(5) {
+      &.sadex {
         left: 1%;
         transform: rotate(64deg);
         bottom: 4%;
       }
-      &:nth-child(6) {
+      &.afar {
         left: 1%;
         transform: rotate(91deg);
         bottom: 0;
       }
 
-      &:nth-child(7) {
+      &.shan {
         top: 10%;
         left: 0;
         transform: rotate(100deg);
       }
 
-      &:nth-child(8) {
+      &.lix {
         right: 0;
         transform: rotate(60deg);
         bottom: 0;
+      }
+    }
+
+    div.input_rate {
+      width: 100%;
+      height: 100%;
+
+      @include flex-box(column);
+      div.xidigo {
+        width: 100%;
+        height: 100%;
+        @include flex-box(row-reverse);
+        Input[type="radio"] {
+          visibility: hidden;
+        }
+        label {
+          @include qoraal-p(2rem, $color4);
+          margin: 20px 5px;
+        }
+        input ~ label {
+          transition: all 0.4s;
+        }
+
+        input:not(:checked) ~ label:hover,
+        input:not(:checked) ~ label:hover label {
+          color: #ffd900;
+        }
+
+        input:checked ~ label {
+          color: #ffd900;
+        }
+      }
+      form {
+        width: 100%;
+        height: 100%;
+        @include flex-box(column);
+        textarea {
+          width: 500px;
+          height: 150px;
+          outline: none;
+          padding: 15px 15px;
+          background-color: $color1;
+          border: none;
+          border: solid 1px $btn_c;
+          border-radius: 6px;
+          @include qoraal-p(1.2rem, $color4);
+          resize: none;
+        }
       }
     }
   }
@@ -599,6 +647,23 @@ div.about {
     }
   }
 }
+
+// rate style
+// input ~ label {
+//   color: var(--bottons_c);
+//   font-size: 35px;
+//   padding: 0px 6px;
+//   transition: all 0.4s;
+// }
+
+// input:not(:checked) ~ label:hover,
+// input:not(:checked) ~ label:hover label {
+//   color: #ffd900;
+// }
+
+// input:checked ~ label {
+//   color: #ffd900;
+// }
 
 // all media  responsive part
 
