@@ -26,7 +26,7 @@ $color4: #fff;
 }
 
 @mixin dyshadow($kaw, $laba, $sadex, $afar) {
-  box-shadow: $kaw $laba $sadex $afar #d7d7d7a7;
+  box-shadow: $kaw $laba $sadex $afar #4c40f73b;
 }
 @mixin qoraal-p($size, $color) {
   font-size: $size;
@@ -572,6 +572,81 @@ div.qiimayasha {
           @include Totile-H(1.1rem, $color4);
           padding: 15px 15px;
           text-align: center;
+        }
+      }
+    }
+  }
+}
+
+// Reviews
+
+div.Reviews {
+  width: 100%;
+  height: 100%;
+  @include flex-box(column);
+  div.ciwaan {
+    width: 90%;
+    height: 100%;
+    padding: 15px 0px;
+    h2 {
+      @include Totile-H(2rem, $color4);
+      padding: 10px 0px;
+    }
+
+    p {
+      @include qoraal-p(1.3rem, $btn_c);
+    }
+  }
+  div.reviews_users {
+    width: 90%;
+    height: 100%;
+    @include dynamic-flex(center, center, row, 15px);
+    padding: 5% 0px;
+    div.user_rev {
+      width: calc(95% / 4);
+      background-color: $btn_c;
+      border-radius: 10px;
+      padding: 3% 2%;
+      transition: all ease-in-out 0.4s;
+      &:hover {
+        @include dyshadow(0px, 10px, 5px, 4px);
+        transition: all ease-in-out 0.4s;
+      }
+      div.userimage {
+        width: 100%;
+        height: 100%;
+        @include flex-box(row);
+        justify-content: flex-start;
+        gap: 10px;
+        div.image {
+          width: 35px;
+          height: 35px;
+          border-radius: 100%;
+          // border: solid 1px $btn_c;
+          margin: 5px 0px;
+          @include flex-box(column);
+          img {
+            position: relative !important;
+          }
+        }
+
+        div.starts {
+          @include qoraal-p(1rem, $color2);
+        }
+      }
+
+      div.name_comments {
+        h3 {
+          @include qoraal-p(0.99rem, $color4);
+        }
+        p {
+          @include qoraal-p(1rem, $main-c);
+          button {
+            @include btn-web(40%);
+            height: 30px;
+            font-size: 12px;
+            background-color: $btn_c_h;
+          }
         }
       }
     }
