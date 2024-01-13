@@ -1,12 +1,22 @@
 import Image from "next/image";
-
+import Moment from "moment";
 const Sponserer = () => {
+  const formatDate = Moment().format("DD-MM-YYYY");
+  const date = new Date();
   return (
     <>
       <div className="sponser">
         <div className="text_sponser">
           <h2>Qiimaha Noocyada kala duwan ee dahabka</h2>
-          <p>Taariikhada Maanta : 11-12-2024</p>
+          <p>
+            <i className="fa-solid fa-calendar-days"></i> Taariikhada :{" "}
+            <span>{formatDate}</span> Hijri :{" "}
+            <span>{date.toLocaleDateString("ar-SA")} </span>
+          </p>
+          {/* <p>
+            <i className="fa-regular fa-clock"></i> Saacada :{" "}
+            {date.toLocaleTimeString()}
+          </p> */}
         </div>
         <div className="sponser_com_logos">
           <div className="mid">

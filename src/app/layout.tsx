@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Heebo } from "next/font/google";
 import "./globals.scss";
 import "./css/all.min.css";
-
+import { Toaster } from "react-hot-toast";
+import { DatacontextProvader } from "../context/XisaabContex";
 const inter = Heebo({ subsets: ["latin"], weight: ["400", "500"] });
 
 export const metadata: Metadata = {
@@ -17,7 +18,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <DatacontextProvader>
+        <>
+          <body className={inter.className}>{children}</body>
+        </>
+      </DatacontextProvader>
     </html>
   );
 }
