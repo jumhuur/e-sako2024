@@ -1,12 +1,18 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
+import ThanksReviewer from "./thanksReviewer";
 const Rate = () => {
   const [rate, setrate] = useState(false);
   const [loading, setloading] = useState(false);
+  const [thanks, setthanks] = useState(false);
   const Ratechange = (): boolean => {
     setrate(true);
     return rate;
+  };
+  const reviewerthanks = (e: any) => {
+    e.preventDefault();
+    setthanks(true);
   };
   return (
     <>
@@ -69,36 +75,45 @@ const Rate = () => {
             </button>
           )}
           {rate && (
-            <div className="input_rate">
-              <div className="xidigo">
-                <input type="radio" name="rate" id="rate1" />
-                <label htmlFor="rate1">
-                  <i className="fa-solid fa-star"></i>
-                </label>
-                <input type="radio" name="rate" id="rate2" />
-                <label htmlFor="rate2">
-                  <i className="fa-solid fa-star"></i>
-                </label>
-                <input type="radio" name="rate" id="rate3" />
-                <label htmlFor="rate3">
-                  <i className="fa-solid fa-star"></i>
-                </label>
-                <input type="radio" name="rate" id="rate4" />
-                <label htmlFor="rate4">
-                  <i className="fa-solid fa-star"></i>
-                </label>
-                <input type="radio" name="rate" id="rate5" />
-                <label htmlFor="rate5">
-                  <i className="fa-solid fa-star"></i>
-                </label>
-              </div>
-              <form action="">
-                <textarea name="comment" maxLength={120} />
-                <button type="submit">
-                  <i className="fa-solid fa-paper-plane"></i> Dir Qiimaynta
-                </button>
-              </form>
-            </div>
+            <>
+              {!thanks ? (
+                <>
+                  <div className="input_rate">
+                    <div className="xidigo">
+                      <input type="radio" name="rate" id="rate1" />
+                      <label htmlFor="rate1">
+                        <i className="fa-solid fa-star"></i>
+                      </label>
+                      <input type="radio" name="rate" id="rate2" />
+                      <label htmlFor="rate2">
+                        <i className="fa-solid fa-star"></i>
+                      </label>
+                      <input type="radio" name="rate" id="rate3" />
+                      <label htmlFor="rate3">
+                        <i className="fa-solid fa-star"></i>
+                      </label>
+                      <input type="radio" name="rate" id="rate4" />
+                      <label htmlFor="rate4">
+                        <i className="fa-solid fa-star"></i>
+                      </label>
+                      <input type="radio" name="rate" id="rate5" />
+                      <label htmlFor="rate5">
+                        <i className="fa-solid fa-star"></i>
+                      </label>
+                    </div>
+                    <form onSubmit={reviewerthanks}>
+                      <textarea name="comment" maxLength={120} />
+                      <button type="submit">
+                        <i className="fa-solid fa-paper-plane"></i> Dir
+                        Qiimaynta
+                      </button>
+                    </form>
+                  </div>
+                </>
+              ) : (
+                <ThanksReviewer />
+              )}
+            </>
           )}
         </div>
       </div>

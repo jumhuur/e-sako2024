@@ -16,6 +16,11 @@ const Nav = () => {
               E-sako
             </Link>
           </div>
+          <div className="mobile_menue">
+            <button type="button" className="action_nav">
+              <i className="fa-solid fa-bars"></i>
+            </button>
+          </div>
           <div className="links">
             <ul>
               <li>

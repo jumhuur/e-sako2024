@@ -263,12 +263,13 @@ div.navraber {
   @include dynamic-flex(center, center, center, row);
   position: sticky;
   top: 0px;
-  border-radius: 15px;
+  // border-radius: 15px;
   // filter: blur(8px);
   // -webkit-filter: blur(8px);
   backdrop-filter: blur(25px);
   // background-color: $main-c;
   z-index: 999;
+
   div.navlinks {
     width: 100%;
     height: 100%;
@@ -287,6 +288,23 @@ div.navraber {
         img {
           position: relative !important;
           @extend %img;
+        }
+      }
+    }
+    div.mobile_menue {
+      width: 50%;
+      @include flex-box(column);
+      align-items: flex-end;
+      padding: 0px 5%;
+      button.action_nav {
+        @include btn-web(40%);
+        background-color: transparent;
+        color: $color2;
+        // border: solid 1.5px $color2;
+        @include qoraal-p(2rem, $color2);
+        &:hover {
+          background-color: $color2;
+          color: $color4;
         }
       }
     }
@@ -545,7 +563,7 @@ div.home {
         height: 100%;
         @include flex-box(column);
         textarea {
-          width: 500px;
+          width: 50%;
           height: 150px;
           outline: none;
           padding: 15px 15px;
@@ -555,6 +573,38 @@ div.home {
           border-radius: 6px;
           @include qoraal-p(1.2rem, $color4);
           resize: none;
+        }
+      }
+    }
+
+    div.thanksreviews {
+      width: 100%;
+      height: 100%;
+      @include flex-box(column);
+      div.animationimage {
+        width: 100%;
+        height: 150px;
+        @include flex-box(column);
+        div {
+          margin: 10px 0px;
+          @include flex-box(column);
+          svg {
+            width: 30% !important;
+          }
+        }
+      }
+      div.qoraal {
+        width: 50%;
+        height: 100%;
+        @include flex-box(column);
+        h3 {
+          @include qoraal-p(1.2rem, $color4);
+          @include flex-box(column);
+          font-weight: 600;
+        }
+        p {
+          @include qoraal-p(1rem, $color4);
+          margin-top: 5px;
         }
       }
     }
@@ -595,13 +645,13 @@ div.sponser {
     width: 90%;
     height: 100%;
     background-color: $color1;
-    @include dynamic-flex(center, center, row, 5%);
+    @include dynamic-flex(center, center, row, 2%);
     border-radius: 10px;
     padding: 1% 0px;
     div.mid {
-      @include dynamic-flex(center, center, column, 2%);
+      @include dynamic-flex(center, center, column, 0%);
       // background-color: $btn_c;
-      width: 130px;
+      width: calc(85% / 5);
       height: 130px;
       border-radius: 5px;
       border-bottom: solid 1px $btn_c;
@@ -823,8 +873,6 @@ div.about {
   @include dynamic-flex(center, center, row, 12px);
   div.qayb {
     width: calc(85% / 2);
-    @include flex-box(column);
-    height: 500px;
     &.sawir {
       img {
         position: relative !important;
@@ -963,6 +1011,93 @@ div.about {
   .raber {
     max-width: 540px;
   }
+
+  div.navraber div.navlinks div.links {
+    display: none;
+  }
+
+  div.navraber div.navlinks div.logo {
+    width: 50%;
+  }
+
+  div.home div.hero img.her_icons {
+    width: 20px;
+    height: 20px;
+  }
+
+  div.home div.hero {
+    width: 100%;
+    div.text_hero h2 {
+      font-size: 1.6rem;
+      margin-top: 7%;
+    }
+    div.text_hero p {
+      padding: 5% 0px;
+    }
+    button {
+      width: 60%;
+      margin: 5px 0px;
+    }
+  }
+
+  div.home div.hero div.text_hero p {
+    text-align: center;
+  }
+  div.sponser div.sponser_com_logos div.mid {
+    width: calc(80% / 2);
+  }
+
+  div.sponser div.text_sponser h2 {
+    text-align: center;
+  }
+
+  div.sponser div.text_sponser p {
+    text-align: center;
+    margin: 8% 0px;
+  }
+
+  div.qiimayasha div.text_an_title {
+    width: 100%;
+  }
+
+  div.home div.hero div.input_rate form textarea {
+    width: 95%;
+  }
+
+  div.qiimayasha div.liiska_noocyada div.nooc {
+    width: calc(80% / 1);
+  }
+
+  div.about div.qayb {
+    width: calc(95% / 1);
+  }
+
+  div.Reviews div.reviews_users div.user_rev {
+    width: calc(95% / 1);
+  }
+
+  div.home div.hero div.Xisaabcom div.section_xisaab form div.btn_actions {
+    height: 100%;
+    width: 95%;
+    row-gap: 4px;
+  }
+
+  div.home div.hero button {
+    margin: 8% 0px;
+  }
+
+  div.home div.hero div.thanksreviews div.qoraal p {
+    font-size: 0.8rem;
+  }
+
+  div.home div.hero div.Xisaabcom div.section_xisaab form select,
+  div.home div.hero div.Xisaabcom div.section_xisaab form input {
+    width: 85%;
+  }
+
+  div.home div.hero div.Xisaabcom div.section_xisaab form label {
+    width: 80%;
+  }
 }
 @include Break-Points(sm) {
   .haye {
@@ -981,6 +1116,52 @@ div.about {
     }
     max-width: 750px;
   }
+
+  div.navraber div.navlinks div.logo {
+    width: 50%;
+  }
+
+  div.navraber div.navlinks div.links {
+    display: none;
+  }
+
+  div.home div.hero {
+    width: 100%;
+    div.text_hero h2 {
+      font-size: 2.7rem;
+    }
+    button {
+      width: 50%;
+    }
+  }
+
+  div.sponser div.sponser_com_logos div.mid {
+    width: calc(80% / 2);
+  }
+
+  div.qiimayasha div.liiska_noocyada div.nooc {
+    width: calc(80% / 1);
+  }
+
+  div.about div.qayb {
+    width: calc(85% / 1);
+  }
+
+  div.Reviews div.reviews_users div.user_rev {
+    width: calc(95% / 2);
+  }
+
+  div.home div.hero div.input_rate form textarea {
+    width: 75%;
+  }
+
+  div.home div.hero div.Xisaabcom div.section_xisaab form select,
+  div.home div.hero div.Xisaabcom div.section_xisaab form input {
+    width: 85%;
+  }
+  div.home div.hero div.Xisaabcom div.section_xisaab form label {
+    width: 80%;
+  }
 }
 
 @include Break-Points(md) {
@@ -998,6 +1179,31 @@ div.about {
     }
     max-width: 950px;
   }
+
+  // hero section
+  div.sponser div.sponser_com_logos div.mid {
+    width: calc(80% / 2);
+  }
+
+  div.qiimayasha div.liiska_noocyada div.nooc {
+    width: calc(80% / 1);
+  }
+
+  div.about div.qayb {
+    width: calc(85% / 1);
+  }
+
+  div.Reviews div.reviews_users div.user_rev {
+    width: calc(95% / 2);
+  }
+
+  div.home div.hero div.input_rate form textarea {
+    width: 70%;
+  }
+
+  div.mobile_menue {
+    display: none;
+  }
 }
 @include Break-Points(lg) {
   .haye {
@@ -1011,6 +1217,14 @@ div.about {
   .raber {
     max-width: 1100px;
   }
+
+  div.home div.hero div.input_rate form textarea {
+    width: 60%;
+  }
+
+  div.mobile_menue {
+    display: none;
+  }
 }
 @include Break-Points(xlg) {
   .haye {
@@ -1023,11 +1237,19 @@ div.about {
   .raber {
     max-width: 1300px;
   }
+
+  div.mobile_menue {
+    display: none;
+  }
 }
 @include Break-Points(xxlg) {
   .xajiye,
   .haye,
   .raber {
     max-width: 1320px;
+  }
+
+  div.mobile_menue {
+    display: none;
   }
 }

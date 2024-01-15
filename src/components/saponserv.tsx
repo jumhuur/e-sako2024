@@ -89,6 +89,20 @@ const Sponserer = () => {
               <p>nooca 18-ka</p>
             </div>
           </div>
+          <div className="mid">
+            <div className="icon">
+              <Image
+                src={"/images/silver1.png"}
+                alt="sponserv"
+                width={30}
+                height={30}
+              />
+            </div>
+            <div className="text_nooc">
+              <h2>0.67 $</h2>
+              <p>Fido 1-G</p>
+            </div>
+          </div>
         </div>
       </div>
     </>
