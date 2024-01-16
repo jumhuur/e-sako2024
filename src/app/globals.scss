@@ -1183,6 +1183,8 @@ div.about {
   // hero section
   div.sponser div.sponser_com_logos div.mid {
     width: calc(80% / 2);
+    &.fido {
+    }
   }
 
   div.qiimayasha div.liiska_noocyada div.nooc {
@@ -1200,9 +1202,8 @@ div.about {
   div.home div.hero div.input_rate form textarea {
     width: 70%;
   }
-
   div.mobile_menue {
-    display: none;
+    display: none !important;
   }
 }
 @include Break-Points(lg) {
@@ -1223,7 +1224,13 @@ div.about {
   }
 
   div.mobile_menue {
-    display: none;
+    display: none !important;
+  }
+
+  div.sponser div.sponser_com_logos div.mid {
+    &.fido {
+      display: none;
+    }
   }
 }
 @include Break-Points(xlg) {
@@ -1239,7 +1246,13 @@ div.about {
   }
 
   div.mobile_menue {
-    display: none;
+    display: none !important;
+  }
+
+  div.sponser div.sponser_com_logos div.mid {
+    &.fido {
+      display: none;
+    }
   }
 }
 @include Break-Points(xxlg) {
@@ -1250,6 +1263,12 @@ div.about {
   }
 
   div.mobile_menue {
-    display: none;
+    display: none !important;
+  }
+
+  div.sponser div.sponser_com_logos div.mid {
+    &.fido {
+      display: none;
+    }
   }
 }

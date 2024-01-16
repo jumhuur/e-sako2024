@@ -89,7 +89,7 @@ const Sponserer = () => {
               <p>nooca 18-ka</p>
             </div>
           </div>
-          <div className="mid">
+          <div className="mid fido">
             <div className="icon">
               <Image
                 src={"/images/silver1.png"}
