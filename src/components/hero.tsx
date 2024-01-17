@@ -4,8 +4,9 @@ import Xisaabcom from "./Xisaabcon";
 import { useState } from "react";
 import { Usedata } from "@/context/XisaabContex";
 import { motion } from "framer-motion";
+import JawaabSako from "./Jawaab";
 const Hero = () => {
-  const { xisaab, allow_xisaab } = Usedata();
+  const { xisaab, allow_xisaab, Jawaab } = Usedata();
   return (
     <>
       <motion.div
@@ -76,9 +77,13 @@ const Hero = () => {
               <i className="fa-solid fa-square-root-variable"></i> Xisaabi Sako
             </button>
           </>
-        ) : (
+        ) : xisaab && !Jawaab ? (
           <>
             <Xisaabcom />
+          </>
+        ) : (
+          <>
+            <JawaabSako />
           </>
         )}
       </motion.div>

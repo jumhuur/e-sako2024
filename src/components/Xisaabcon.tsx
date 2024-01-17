@@ -1,8 +1,14 @@
 "use client";
 import { Usedata } from "@/context/XisaabContex";
 import { motion } from "framer-motion";
+import React from "react";
 const Xisaabcom = () => {
-  const { allow_xisaab } = Usedata();
+  const { allow_xisaab, allow_Jawaab, Jawaab } = Usedata();
+  const XisaabiHada = (e: React.MouseEvent<HTMLButtonElement>): void => {
+    e.preventDefault();
+    allow_Jawaab();
+    console.log(Jawaab);
+  };
   return (
     <>
       <motion.div
@@ -85,7 +91,7 @@ const Xisaabcom = () => {
             <label>Qor Xadiga</label>
             <input type="text" placeholder="Qor xadiga .." />
             <div className="btn_actions">
-              <button className="xisaabi" type="submit">
+              <button onClick={XisaabiHada} className="xisaabi" type="submit">
                 Xisaabi Hada
               </button>
               <button onClick={allow_xisaab} className="ka_noqo" type="button">

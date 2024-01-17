@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Lottie from "lottie-react";
-import animationData from "../../public/images/Animation - 1699276986746.json";
+import animationData from "../../public/images/thanks.json";
 import { motion } from "framer-motion";
 
 const ThanksReviewer = () => {

@@ -1,17 +1,27 @@
 "use client";
-import React, { useContext, useEffect, useState } from "react";
-const Datacontext = React.createContext();
 export function Usedata() {
   return useContext(Datacontext);
 }
+import React, { useContext, useEffect, useState } from "react";
+const Datacontext = React.createContext();
+
+// // interfaces and types
+// interface Datacontexttypes {
+//   children: React.ReactNode;
+// }
+
 export function DatacontextProvader({ children }) {
   const [xisaab, setxisaab] = useState(false);
+  const [Jawaab, setJawaab] = useState(false);
   const allow_xisaab = () => setxisaab(!xisaab);
+  const allow_Jawaab = () => {
+    setJawaab(!Jawaab);
+    console.log(Jawaab);
+  };
   const [Aclogin, setAclogin] = useState(false);
   const [Acsingup, setAcsingup] = useState(false);
   const [AcSako, setAcSako] = useState(false);
   const [alert, setalert] = useState(false);
-  const [AcJawaab, setAcJawaab] = useState(false);
   const [AcLoading, setAcLoading] = useState(false);
   const [AcOverlay, setAcOverlay] = useState(false);
   const [navmobile, setnavmobile] = useState(false);
@@ -23,7 +33,7 @@ export function DatacontextProvader({ children }) {
   // const [_docid, set_docid] = useState('');
   const [NDahab, setNDahab] = useState("24");
   const [N_Midho, setN_Midho] = useState("Hadhuudh");
-  const [Xadiga, seXadiga] = useState("");
+  const [Xadiga, seXadiga] = useState(0);
   const [Shardi1, setshardi1] = useState("");
   const [Shardi2, setshardi2] = useState("");
   const [Shardi3, setshardi3] = useState("");
@@ -34,11 +44,11 @@ export function DatacontextProvader({ children }) {
   const Nisaab_dahab = 85;
   const Nisaabka_Fidada = 595;
   /*--------------- dahab ------------------*/
-  const q_24ka = dahab && dahab.price_gram_24k?.toFixed(2);
-  //const q_24ka = 56.56
+  //const q_24ka = dahab && dahab.price_gram_24k?.toFixed(2);
+  const q_24ka = 56.56;
   /*--------------- fido ------------------*/
-  const q_Fidada = fido && fido.price_gram_24k?.toFixed(2);
-  //const q_Fidada = 0.66
+  //const q_Fidada = fido && fido.price_gram_24k?.toFixed(2);
+  const q_Fidada = 0.66;
 
   // halbeegyada xisaabta Midhaha
   const Nisaabka_Midhaha = 612; // waa sida jumhuurka ayaa qaba in uu yahay 612  // 672 // 750  // 653
@@ -137,7 +147,7 @@ export function DatacontextProvader({ children }) {
 
   // sako xisaabin bilow
   const Diyaariye = () => {
-    Xisaabiye(Nooc, Xadiga, NDahab, q_24ka, q_Fidada);
+    Xisaabiye(Nooc, Xadiga, NDahab, q_24ka);
     ActiveLoadin();
   };
 
@@ -723,50 +733,52 @@ export function DatacontextProvader({ children }) {
   // sako xisaabin dhamaad
 
   const value = {
-    ActivLogin,
-    Aclogin,
-    setAclogin,
-    ActiveSinup,
-    Acsingup,
-    setAcsingup,
-    ActiveSako,
-    AcSako,
-    ActiveJawaab,
-    AcJawaab,
-    ActiveLoadin,
-    AcLoading,
-    ActivOverley,
-    AcOverlay,
-    dahab,
-    ActiveNavmobile,
-    navmobile,
-    // sako hawlaheeda
-    Diyaariye,
-    Nooc,
-    setNooc,
-    NDahab,
-    setNDahab,
-    Xadiga,
-    seXadiga,
-    Shardi1,
-    Shardi2,
-    Shardi3,
-    jawaab,
-    setq_bixid,
-    q_bixid,
-    setq_isku_jir,
-    q_isku_jir,
-    setN_Midho,
-    N_Midho,
-    fido,
-    q_Fidada,
-    muti,
-    ActiveAlert,
-    alert,
+    // ActivLogin,
+    // Aclogin,
+    // setAclogin,
+    // ActiveSinup,
+    // Acsingup,
+    // setAcsingup,
+    // ActiveSako,
+    // AcSako,
+    // ActiveJawaab,
+    // AcJawaab,
+    // ActiveLoadin,
+    // AcLoading,
+    // ActivOverley,
+    // AcOverlay,
+    // dahab,
+    // ActiveNavmobile,
+    // navmobile,
+    // // sako hawlaheeda
+    // Diyaariye,
+    // Nooc,
+    // setNooc,
+    // NDahab,
+    // setNDahab,
+    // Xadiga,
+    // seXadiga,
+    // Shardi1,
+    // Shardi2,
+    // Shardi3,
+    // jawaab,
+    // setq_bixid,
+    // q_bixid,
+    // setq_isku_jir,
+    // q_isku_jir,
+    // setN_Midho,
+    // N_Midho,
+    // fido,
+    // q_Fidada,
+    // muti,
+    // ActiveAlert,
+    // alert,
 
     // kuwo cusub
     allow_xisaab,
     xisaab,
+    allow_Jawaab,
+    Jawaab,
   };
 
   return <Datacontext.Provider value={value}>{children}</Datacontext.Provider>;
