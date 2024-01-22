@@ -13,34 +13,24 @@ const Datacontext = React.createContext();
 export function DatacontextProvader({ children }) {
   const [xisaab, setxisaab] = useState(false);
   const [Jawaab, setJawaab] = useState(false);
-  const allow_xisaab = () => setxisaab(!xisaab);
-  const allow_Jawaab = () => {
-    setJawaab(!Jawaab);
-    console.log(Jawaab);
-  };
-  const [Aclogin, setAclogin] = useState(false);
-  const [Acsingup, setAcsingup] = useState(false);
-  const [AcSako, setAcSako] = useState(false);
-  const [alert, setalert] = useState(false);
+  const [xadid_sh, setxadid_sh] = useState(null);
   const [AcLoading, setAcLoading] = useState(false);
-  const [AcOverlay, setAcOverlay] = useState(false);
-  const [navmobile, setnavmobile] = useState(false);
+  const [cancel, setcancel] = useState(false);
   const [dahab, setdahab] = useState(65.45);
   const [fido, setfido] = useState(0.75);
-
   // diyaarinta qaybta sako xisaabinta
   const [Nooc, setNooc] = useState("Lacag");
   // const [_docid, set_docid] = useState('');
   const [NDahab, setNDahab] = useState("24");
   const [N_Midho, setN_Midho] = useState("Hadhuudh");
-  const [Xadiga, seXadiga] = useState(0);
+  const [Xadiga, seXadiga] = useState("");
   const [Shardi1, setshardi1] = useState("");
   const [Shardi2, setshardi2] = useState("");
   const [Shardi3, setshardi3] = useState("");
   const [jawaab, setjawaab] = useState("");
   const [q_bixid, setq_bixid] = useState("");
   const [q_isku_jir, setq_isku_jir] = useState("50%");
-  const [muti, setMufti] = useState("Waxaa Ka Baxaya");
+  const [Mufti, setMufti] = useState("Waxaa Ka Baxaya");
   const Nisaab_dahab = 85;
   const Nisaabka_Fidada = 595;
   /*--------------- dahab ------------------*/
@@ -56,30 +46,11 @@ export function DatacontextProvader({ children }) {
   const x_kharaskha = 0.05;
   const isku_jir = 0.075;
 
-  const ActivLogin = () => {
-    Aclogin ? setAclogin(false) : setAclogin(true);
-    setAcsingup(false);
-    setnavmobile(false);
+  const allow_xisaab = () => {
+    setxisaab(!xisaab);
   };
-
-  const ActiveSinup = () => {
-    Acsingup ? setAcsingup(false) : setAcsingup(true);
-    setAclogin(false);
-  };
-
-  const ActiveSako = () => {
-    AcSako ? setAcSako(false) : setAcSako(true);
-    setAcJawaab(false);
-  };
-
-  const ActiveAlert = () => {
-    alert ? setalert(false) : setalert(true);
-    console.log(alert);
-  };
-
-  const ActiveJawaab = () => {
-    AcJawaab ? setAcJawaab(false) : setAcJawaab(true);
-    setAcLoading(false);
+  const allow_Jawaab = () => {
+    setJawaab(!Jawaab);
   };
 
   const ActiveLoadin = () => {
@@ -87,24 +58,13 @@ export function DatacontextProvader({ children }) {
     function timeload() {
       setTimeout(() => {
         setAcLoading(false);
-        setAcJawaab(true);
-      }, 3000);
+        setJawaab(true);
+      }, 2000);
     }
     timeload();
-    setAcSako(false);
-  };
-
-  const ActivOverley = () => {
-    AcOverlay ? setAcOverlay(false) : setAcOverlay(true);
-    setAcSako(false);
-  };
-
-  const ActiveNavmobile = () => {
-    navmobile ? setnavmobile(false) : setnavmobile(true);
   };
 
   // fetch IPA Dahab
-
   useEffect(() => {
     // var myHeaders = new Headers();
     // myHeaders.append("x-access-token", "goldapi-14sctkzonfjfa-io");
@@ -155,8 +115,10 @@ export function DatacontextProvader({ children }) {
     const Xadid_nisaab = Qiimo_24 * Nisaab_dahab;
     const xadidka_nisaabka_fidada = q_Fidada * Nisaabka_Fidada;
     if (Nooc === "Lacag") {
+      setxadid_sh("$");
       const pattern = /[^0-9.]/g;
       if (Xadiga.match(pattern)) {
+        setcancel(true);
         setMufti("Waa Qalad Waxaad Qortay");
         setjawaab(`Lama Xisaabin Karo `);
         setshardi1(`Lama Ogolo Waxii Aan Tiro Ahayn`);
@@ -182,6 +144,7 @@ export function DatacontextProvader({ children }) {
           setshardi2(`Waa Inaad Sanad Haysay`);
           setshardi3(`Waxaa Lagugu Xisabiyay Fido o maraysa ${q_Fidada} $`);
         } else {
+          setcancel(true);
           setMufti("Lacagtaadu Sako May Gaadhin");
           setjawaab(`Laguma Laha Sako ${Xadiga}`);
           setshardi1(
@@ -196,8 +159,10 @@ export function DatacontextProvader({ children }) {
         }
       }
     } else if (Nooc === "Dahab") {
+      setxadid_sh("Giraam");
       const pattern = /[^0-9.]/g;
       if (Xadiga.match(pattern)) {
+        setcancel(true);
         setMufti("Waa Qalad Waxaad Qortay");
         setjawaab(`Lama Xisaabin Karo `);
         setshardi1(`Lama Ogolo Waxii Aan Tiro Ahayn`);
@@ -219,6 +184,7 @@ export function DatacontextProvader({ children }) {
               ).toFixed(2)}$`
             );
           } else {
+            setcancel(true);
             setMufti("Dahabkagu Sako Ma Gaadhin");
             setjawaab(`Sako Laguma Laha ${Xadiga} `);
             setshardi1(
@@ -328,8 +294,10 @@ export function DatacontextProvader({ children }) {
         }
       }
     } else if (Nooc === "Geel") {
+      setxadid_sh("Neef");
       const pattern = /[^0-9]/g;
       if (Xadiga.match(pattern)) {
+        setcancel(true);
         setMufti("Waa Qalad Waxaad Qortay");
         setjawaab(`Lama Xisaabin Karo `);
         setshardi1(`Lama Ogolo Waxii Aan Tiro Ahayn`);
@@ -420,6 +388,7 @@ export function DatacontextProvader({ children }) {
             setshardi3(`Waa Inay Geel Yihiin`);
           }
         } else {
+          setcancel(true);
           setMufti(`Sako Laguma Laha `);
           setjawaab(`sako ma gaadhin ${Xadiga}`);
           setshardi1(`Geelu waxay ku sako gadhaa 5 Neef`);
@@ -428,8 +397,10 @@ export function DatacontextProvader({ children }) {
         }
       }
     } else if (Nooc === "Lo,a") {
+      setxadid_sh("Neef");
       const pattern = /[^0-9]/g;
       if (Xadiga.match(pattern)) {
+        setcancel(true);
         setMufti("Waa Qalad Waxaad Qortay");
         setjawaab(`Lama Ogola Wax (.) ah qor Tirada inta `);
         setshardi1(`Lama Ogolo Waxii Aan Tiro Ahayn`);
@@ -501,6 +472,7 @@ export function DatacontextProvader({ children }) {
             }
           }
         } else {
+          setcancel(true);
           setMufti(`Sako Laguma Laha`);
           setjawaab(`sako ma gaadhin ${Xadiga}`);
           setshardi1(`Lo,da waxay ku sako gadhaa 30`);
@@ -509,8 +481,10 @@ export function DatacontextProvader({ children }) {
         }
       }
     } else if (Nooc === "Adhi") {
+      setxadid_sh("Neef");
       const pattern = /[^0-9]/g;
       if (Xadiga.match(pattern)) {
+        setcancel(true);
         setMufti("Waa Qalad Waxaad Qortay");
         setjawaab(`Lama Xisaabin Karo `);
         setshardi1(`Lama Ogolo Waxii Aan Tiro Ahayn`);
@@ -573,6 +547,7 @@ export function DatacontextProvader({ children }) {
         } else if (String(Xadiga).length > 16) {
           console.log("ooops");
         } else {
+          setcancel(true);
           setMufti(`Adhigan sako Ma Gaadhin`);
           setjawaab(`waxaba laguma laha ${Xadiga} `);
           setshardi1("adhiga waxa uu ku sako gadhaa 40 neef");
@@ -581,8 +556,10 @@ export function DatacontextProvader({ children }) {
         }
       }
     } else if (Nooca === "Fido") {
+      setxadid_sh("Giraam");
       const pattern = /[^0-9]/g;
       if (Xadiga.match(pattern)) {
+        setcancel(true);
         setMufti("Waa Qalad Waxaad Qortay");
         setjawaab(`Lama Xisaabin Karo `);
         setshardi1(`Lama Ogolo Waxii Aan Tiro Ahayn`);
@@ -603,6 +580,7 @@ export function DatacontextProvader({ children }) {
             ).toFixed(2)}$`
           );
         } else {
+          setcancel(true);
           setMufti("Fidadaadu  Sako Ma Gaadhin");
           setjawaab(`Waxba Laguma Laha`);
           setshardi1(`Fidadu Waxay Ku sako gaadhaa 595 Giraam`);
@@ -613,8 +591,10 @@ export function DatacontextProvader({ children }) {
         }
       }
     } else if (Nooc === "Rikaas") {
+      setxadid_sh("Giraam");
       const pattern = /[^0-9]/g;
       if (Xadiga.match(pattern)) {
+        setcancel(true);
         setMufti("Waa Qalad Waxaad Qortay");
         setjawaab(`Lama Xisaabin Karo `);
         setshardi1(`Lama Ogolo Waxii Aan Tiro Ahayn`);
@@ -642,11 +622,14 @@ export function DatacontextProvader({ children }) {
           setshardi1(`Rikaasku Waxa Ku Sako Gaadhaa 85 Giraam`);
           setshardi2(`Waa Inuu yahay Dahab Dad Hore Aaseen`);
           setshardi3(``);
+          setcancel(true);
         }
       }
     } else if (Nooc === "Midho") {
+      setxadid_sh("KG");
       const pattern = /[^0-9]/g;
-      if (Xadiga.match(pattern)) {
+      if (Xadiga?.match(pattern)) {
+        setcancel(true);
         setMufti("Waa Qalad Waxaad Qortay");
         setjawaab(`Lama Xisaabin Karo `);
         setshardi1(`Lama Ogolo Waxii Aan Tiro Ahayn`);
@@ -704,6 +687,7 @@ export function DatacontextProvader({ children }) {
               setshardi3(`Waa inay yihiin midho la kaydsan karro `);
             }
           } else {
+            setcancel(true);
             setMufti("Waa Qalad Qaabka Xisaabtaadu");
             setjawaab(`Fadlan Dooro Qaabka Bixitaanka`);
             setshardi1(
@@ -724,6 +708,7 @@ export function DatacontextProvader({ children }) {
           setshardi3(
             `Dhawr sano Haday Kuu Yaalo Midhahaagu sakadu waa Hal Mar Uun`
           );
+          setcancel(true);
         }
       }
     }
@@ -752,20 +737,6 @@ export function DatacontextProvader({ children }) {
     // navmobile,
     // // sako hawlaheeda
     // Diyaariye,
-    // Nooc,
-    // setNooc,
-    // NDahab,
-    // setNDahab,
-    // Xadiga,
-    // seXadiga,
-    // Shardi1,
-    // Shardi2,
-    // Shardi3,
-    // jawaab,
-    // setq_bixid,
-    // q_bixid,
-    // setq_isku_jir,
-    // q_isku_jir,
     // setN_Midho,
     // N_Midho,
     // fido,
@@ -775,10 +746,32 @@ export function DatacontextProvader({ children }) {
     // alert,
 
     // kuwo cusub
+    Xadiga,
+    seXadiga,
+    Nooc,
+    setNooc,
+    NDahab,
+    setNDahab,
+    setq_bixid,
+    q_bixid,
+    setq_isku_jir,
+    q_isku_jir,
+    AcLoading,
+    setAcLoading,
+    Shardi1,
+    Shardi2,
+    Shardi3,
+    jawaab,
     allow_xisaab,
     xisaab,
     allow_Jawaab,
     Jawaab,
+    Diyaariye,
+    xadid_sh,
+    setMufti,
+    Mufti,
+    setcancel,
+    cancel,
   };
 
   return <Datacontext.Provider value={value}>{children}</Datacontext.Provider>;
