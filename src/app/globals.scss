@@ -405,7 +405,7 @@ div.home {
               justify-content: space-between;
               padding: 10px 0px;
               div.gaar {
-                width: calc(95% / 3);
+                width: calc(100% / 1);
                 @include flex-box(row);
                 input {
                   width: 20px;
@@ -654,6 +654,15 @@ div.home {
         column-gap: 15px;
         button {
           @include btn-web(20%);
+          &.ka_noqo {
+            background-color: transparent;
+            color: $color4;
+            border: solid 1px $color2;
+            &:hover {
+              background-color: $color2;
+              color: $color4;
+            }
+          }
         }
       }
     }
@@ -1097,7 +1106,7 @@ div.about {
   }
 
   div.home div.hero button {
-    margin: 8% 0px;
+    margin: 4% 0px;
   }
 
   div.home div.hero div.thanksreviews div.qoraal p {
@@ -1111,6 +1120,43 @@ div.about {
 
   div.home div.hero div.Xisaabcom div.section_xisaab form label {
     width: 80%;
+  }
+  div.home div.hero div.thanksreviews div.qoraal {
+    width: 100%;
+  }
+
+  div.home div.hero div.thanksreviews div.btns_jawaab button {
+    width: 47%;
+  }
+
+  div.home div.hero div.Xisaabcom div.section_xisaab form div.dahab_n label {
+    width: 85%;
+  }
+
+  div.home
+    div.hero
+    div.Xisaabcom
+    div.section_xisaab
+    form
+    div.dahab_n
+    select.n_dahab {
+    width: 85%;
+  }
+
+  div.home
+    div.hero
+    div.Xisaabcom
+    div.section_xisaab
+    form
+    div.checkh_box
+    div.doorasho
+    div.gaar {
+    width: calc(80% / 1);
+    padding: 5px 0px;
+  }
+
+  div.home div.hero div.thanksreviews div.animationimage span.qalad div svg {
+    width: 45% !important;
   }
 }
 @include Break-Points(sm) {
@@ -1178,6 +1224,44 @@ div.about {
   }
 }
 
+div.home div.hero div.thanksreviews div.qoraal {
+  width: 85%;
+}
+
+div.home div.hero div.thanksreviews div.btns_jawaab button {
+  width: 37%;
+}
+
+div.home div.hero div.Xisaabcom div.section_xisaab form div.dahab_n label {
+  width: 85%;
+}
+
+div.home
+  div.hero
+  div.Xisaabcom
+  div.section_xisaab
+  form
+  div.dahab_n
+  select.n_dahab {
+  width: 85%;
+}
+
+div.home
+  div.hero
+  div.Xisaabcom
+  div.section_xisaab
+  form
+  div.checkh_box
+  div.doorasho
+  div.gaar {
+  width: calc(80% / 1);
+  padding: 5px 0px;
+}
+
+div.home div.hero div.thanksreviews div.animationimage span.qalad div svg {
+  width: 30% !important;
+}
+
 @include Break-Points(md) {
   .haye {
     max-width: 720px;
@@ -1219,6 +1303,58 @@ div.about {
   div.mobile_menue {
     display: none !important;
   }
+
+  div.home div.hero div.thanksreviews div.qoraal {
+    width: 85%;
+  }
+
+  div.home div.hero div.thanksreviews div.btns_jawaab button {
+    width: 37%;
+  }
+
+  div.home div.hero div.Xisaabcom div.section_xisaab form div.dahab_n label {
+    width: 85%;
+  }
+
+  div.home
+    div.hero
+    div.Xisaabcom
+    div.section_xisaab
+    form
+    div.dahab_n
+    select.n_dahab {
+    width: 85%;
+  }
+
+  div.home
+    div.hero
+    div.Xisaabcom
+    div.section_xisaab
+    form
+    div.checkh_box
+    div.doorasho
+    div.gaar {
+    width: calc(90% / 3);
+    padding: 5px 0px;
+  }
+
+  div.home div.hero div.Xisaabcom div.section_xisaab form div.dahab_n label {
+    width: 65%;
+  }
+
+  div.home
+    div.hero
+    div.Xisaabcom
+    div.section_xisaab
+    form
+    div.dahab_n
+    select.n_dahab {
+    width: 65%;
+  }
+
+  div.home div.hero div.thanksreviews div.animationimage span.qalad div svg {
+    width: 30% !important;
+  }
 }
 @include Break-Points(lg) {
   .haye {
@@ -1245,6 +1381,40 @@ div.about {
     &.fido {
       display: none;
     }
+  }
+
+  div.home
+    div.hero
+    div.Xisaabcom
+    div.section_xisaab
+    form
+    div.checkh_box
+    div.doorasho
+    div.gaar {
+    width: calc(95% / 3);
+    padding: 5px 0px;
+  }
+
+  div.home div.hero div.Xisaabcom div.section_xisaab form div.dahab_n label {
+    width: 65%;
+  }
+
+  div.home
+    div.hero
+    div.Xisaabcom
+    div.section_xisaab
+    form
+    div.dahab_n
+    select.n_dahab {
+    width: 65%;
+  }
+
+  div.home div.hero div.thanksreviews div.qoraal {
+    width: 85%;
+  }
+
+  div.home div.hero div.thanksreviews div.btns_jawaab button {
+    width: 20%;
   }
 }
 @include Break-Points(xlg) {
