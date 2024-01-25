@@ -41,7 +41,9 @@ const Xisaabcom = () => {
               onInput={(e) => setcancel(false)}
               onChange={(e) => setNooc(e.target.value)}
             >
-              <option value="Lacag">Lacag</option>
+              <option value="Lacag" selected disabled>
+                Lacag
+              </option>
               <option value="Dahab">Dahab</option>
               <option value="Fido">Fido</option>
               <option value="Rikaas">Rikaas</option>

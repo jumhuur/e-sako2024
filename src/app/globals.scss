@@ -814,6 +814,7 @@ div.Reviews {
     width: 90%;
     height: 100%;
     @include dynamic-flex(center, center, row, 15px);
+    overflow: hidden;
     padding: 5% 0px;
     div.user_rev {
       width: calc(95% / 4);

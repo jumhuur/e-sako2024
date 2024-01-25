@@ -1,7 +1,8 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import ThanksReviewer from "./thanksReviewer";
+import { useScroll, motion } from "framer-motion";
 const Rate = () => {
   const [rate, setrate] = useState(false);
   const [loading, setloading] = useState(false);
@@ -14,9 +15,25 @@ const Rate = () => {
     e.preventDefault();
     setthanks(true);
   };
+
+  const Ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: Ref,
+    offset: ["0 1", "1 1"],
+  });
+
   return (
     <>
-      <div className="home">
+      <motion.div
+        transition={{ duration: 2, type: "spring" }}
+        className="home"
+        ref={Ref}
+        style={{
+          scale: scrollYProgress,
+          opacity: scrollYProgress,
+          transition: "duration: 2",
+        }}
+      >
         <div className="hero">
           <Image
             className="her_icons kaw"
@@ -116,7 +133,7 @@ const Rate = () => {
             </>
           )}
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };

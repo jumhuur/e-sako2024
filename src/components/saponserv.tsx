@@ -1,5 +1,8 @@
+"use client";
 import Image from "next/image";
 import Moment from "moment";
+import { motion, useScroll } from "framer-motion";
+import { useRef } from "react";
 const Sponserer = () => {
   const formatDate = Moment().format("DD-MM-YYYY");
   const date = new Date();
@@ -19,7 +22,7 @@ const Sponserer = () => {
           </p> */}
         </div>
         <div className="sponser_com_logos">
-          <div className="mid">
+          <motion.div className="mid">
             <div className="icon">
               <Image
                 src={"/images/dahab.png"}
@@ -32,8 +35,8 @@ const Sponserer = () => {
               <h2>65.67 $</h2>
               <p>nooca 24-ka</p>
             </div>
-          </div>
-          <div className="mid">
+          </motion.div>
+          <motion.div className="mid">
             <div className="icon">
               <Image
                 src={"/images/dahab.png"}
@@ -46,8 +49,8 @@ const Sponserer = () => {
               <h2>54.67 $</h2>
               <p>nooca 22-ka</p>
             </div>
-          </div>
-          <div className="mid">
+          </motion.div>
+          <motion.div className="mid">
             <div className="icon">
               <Image
                 src={"/images/dahab.png"}
@@ -60,8 +63,8 @@ const Sponserer = () => {
               <h2>50.67 $</h2>
               <p>nooca 21-ka</p>
             </div>
-          </div>
-          <div className="mid">
+          </motion.div>
+          <motion.div className="mid">
             <div className="icon">
               <Image
                 src={"/images/dahab.png"}
@@ -74,8 +77,8 @@ const Sponserer = () => {
               <h2>48.67 $</h2>
               <p>nooca 20-ka</p>
             </div>
-          </div>
-          <div className="mid">
+          </motion.div>
+          <motion.div className="mid">
             <div className="icon">
               <Image
                 src={"/images/dahab.png"}
@@ -88,8 +91,8 @@ const Sponserer = () => {
               <h2>45.67 $</h2>
               <p>nooca 18-ka</p>
             </div>
-          </div>
-          <div className="mid fido">
+          </motion.div>
+          <motion.div className="mid fido">
             <div className="icon">
               <Image
                 src={"/images/silver1.png"}
@@ -102,7 +105,7 @@ const Sponserer = () => {
               <h2>0.67 $</h2>
               <p>Fido 1-G</p>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </>
