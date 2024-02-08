@@ -7,7 +7,7 @@ const AdeegImg = () => {
       <div className="qayb sawir_adeeg">
         <div className="sawir_qayb_adeeg">
           {/* <Image src="/images/serv8.svg" alt="adeeg" fill={true} /> */}
-          <Lottie animationData={animationData} />
+          {/* <Lottie animationData={animationData} /> */}
         </div>
       </div>
     </>
