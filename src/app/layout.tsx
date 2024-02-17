@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
-import { Heebo } from "next/font/google";
+import { Heebo, Roboto } from "next/font/google";
 import "./globals.scss";
 import "./css/all.min.css";
 import { Toaster } from "react-hot-toast";
 import { DatacontextProvader } from "../context/XisaabContex";
-const inter = Heebo({ subsets: ["latin"], weight: ["400", "500"] });
+const inter = Heebo({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+});
 
 export const metadata: Metadata = {
   title: "E-sako | Xisaabinta Sakada Hab Waafaqsan Islaamka",
