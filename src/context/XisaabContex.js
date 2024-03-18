@@ -640,6 +640,7 @@ export function DatacontextProvader({ children }) {
       } else {
         if (Xadiga >= Nisaabka_Midhaha) {
           if (q_bixid === "b_kh") {
+            setcancel(false);
             const last_jawaab = Number(Xadiga * x_bilaa_kharash).toFixed();
             setMufti("Waxaa Ka Baxaya ");
             setjawaab(`${last_jawaab}`);
@@ -649,6 +650,7 @@ export function DatacontextProvader({ children }) {
             );
             setshardi3(`Waa inay yihiin midho la kaydsan karro `);
           } else if (q_bixid === "kha") {
+            setcancel(false);
             const last_jawaab = Number(Xadiga * x_kharaskha).toFixed(2);
             setMufti("Waxaa Ka Baxaya ");
             setjawaab(`${last_jawaab}`);
@@ -659,6 +661,7 @@ export function DatacontextProvader({ children }) {
             setshardi3(`Waa inay yihiin midho la kaydsan karro `);
           } else if (q_bixid === "isk") {
             if (q_isku_jir === "50%") {
+              setcancel(false);
               const last_jawaab = Number(Xadiga * isku_jir).toFixed(2);
               setMufti("Waxaa Ka Baxaya ");
               setjawaab(`${last_jawaab}`);
@@ -688,15 +691,11 @@ export function DatacontextProvader({ children }) {
             }
           } else {
             setcancel(true);
-            setMufti("Waa Qalad Qaabka Xisaabtaadu");
+            setMufti("Qalad Ayaa Jira");
             setjawaab(`Fadlan Dooro Qaabka Bixitaanka`);
-            setshardi1(
-              `Marka Aad Cadayso Qaabka Midhuhu Kuugu Baxeen Ayaan Xisaabin Karnaa`
-            );
-            setshardi2(`Intaanad Waxba Xisaabin Qor Qaabka bixitaanka`);
-            setshardi3(
-              `Mar kasta waxaad qortay saxan yihhin jawaabtuna way saxmaysaa`
-            );
+            setshardi1(`Cadee Qaabka Bixitaanka`);
+            setshardi2(`Qor Qaabka bixitaanka`);
+            setshardi3(`Sixitaanka Qoraalka waa Sixitaanka Jawaabta`);
           }
         } else {
           setMufti("Midhaha Kuu Baxay Sako Ma Gaadhin");
