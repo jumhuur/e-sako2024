@@ -23,7 +23,7 @@ export function DatacontextProvader({ children }) {
   // const [_docid, set_docid] = useState('');
   const [NDahab, setNDahab] = useState("24");
   const [N_Midho, setN_Midho] = useState("Hadhuudh");
-  const [Xadiga, seXadiga] = useState("");
+  const [Xadiga, seXadiga] = useState("0");
   const [Shardi1, setshardi1] = useState("");
   const [Shardi2, setshardi2] = useState("");
   const [Shardi3, setshardi3] = useState("");

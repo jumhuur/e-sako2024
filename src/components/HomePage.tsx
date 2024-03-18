@@ -1,6 +1,4 @@
 import Hero from "./hero";
-import Over from "./over";
-
 const HomePage = () => {
   return (
     <>

@@ -82,9 +82,7 @@ const Hero = () => {
             <Xisaabcom />
           </>
         ) : (
-          <>
-            <JawaabSako />
-          </>
+          <>{/* <JawaabSako /> */}</>
         )}
       </motion.div>
     </>

@@ -13,7 +13,7 @@ const ThanksReviewer = () => {
         </div>
         <div className="qoraal">
           <h3>Mahadsanid </h3>
-          <p>Qiimayntaada waan hellnay</p>
+          <p>Qiimayntaada waan hellnay. </p>
         </div>
       </motion.div>
     </>

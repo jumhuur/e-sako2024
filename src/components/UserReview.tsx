@@ -1,6 +1,6 @@
 import Image from "next/image";
 const UserReviews = () => {
-  const rate: number = 2;
+  const rate: number = 4;
   return (
     <>
       <div className="user_rev">
@@ -60,10 +60,12 @@ const UserReviews = () => {
           </div>
         </div>
         <div className="name_comments">
-          <h3>User Qarsoon</h3>
+          <h3>Qiimaynta</h3>
           <p>
             Mashalaah Sahbakada Waa Shabakada Runtii Wax ...{" "}
+            {/* If textQiimayn.length > 45*/}
             <button type="button">Sii Akhri</button>
+            {/* else*/}
           </p>
         </div>
       </div>

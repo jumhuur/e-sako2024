@@ -27,12 +27,17 @@ const JawaabSako = () => {
           {!cancel && <Lottie animationData={animationData} />}
         </div>
         <div className="qoraal">
-          <h2>{Mufti}</h2>
-          <h3 className="jawaab_h3">
-            <span>
-              {jawaab} {xadid_sh}
-            </span>
-          </h3>
+          <div className="mufti">
+            <h2>{Mufti}</h2>
+          </div>
+          <div className="jawaab_rasmi">
+            <h3 className="jawaab_h3">
+              <span>
+                {jawaab} {xadid_sh}
+              </span>
+            </h3>
+          </div>
+
           <div className="shuruud_title">
             <h4 className="title_sh">Shuuradaha Sakadaada</h4>
             <p className="shuruudo">
