@@ -18,6 +18,8 @@ export function DatacontextProvader({ children }) {
   const [cancel, setcancel] = useState(false);
   const [dahab, setdahab] = useState(65.45);
   const [fido, setfido] = useState(0.75);
+  const [ModelT, setModelT] = useState(false);
+
   // diyaarinta qaybta sako xisaabinta
   const [Nooc, setNooc] = useState("Lacag");
   // const [_docid, set_docid] = useState('');
@@ -33,6 +35,7 @@ export function DatacontextProvader({ children }) {
   const [Mufti, setMufti] = useState("Waxaa Ka Baxaya");
   const Nisaab_dahab = 85;
   const Nisaabka_Fidada = 595;
+
   /*--------------- dahab ------------------*/
   //const q_24ka = dahab && dahab.price_gram_24k?.toFixed(2);
   const q_24ka = 56.56;
@@ -46,6 +49,9 @@ export function DatacontextProvader({ children }) {
   const x_kharaskha = 0.05;
   const isku_jir = 0.075;
 
+  const activeModelTabaruc = () => {
+    setModelT(!ModelT);
+  };
   const allow_xisaab = () => {
     setxisaab(!xisaab);
   };
@@ -771,6 +777,8 @@ export function DatacontextProvader({ children }) {
     Mufti,
     setcancel,
     cancel,
+    ModelT,
+    activeModelTabaruc,
   };
 
   return <Datacontext.Provider value={value}>{children}</Datacontext.Provider>;

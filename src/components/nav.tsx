@@ -1,6 +1,9 @@
+"use client";
+import { Usedata } from "@/context/XisaabContex";
 import Image from "next/image";
 import Link from "next/link";
 const Nav = () => {
+  const { activeModelTabaruc } = Usedata();
   return (
     <>
       <div className="navraber">
@@ -37,7 +40,11 @@ const Nav = () => {
               </li>
             </ul>
             <div className="btn_actions">
-              <button type="button" className="action_nav">
+              <button
+                onClick={activeModelTabaruc}
+                type="button"
+                className="action_nav"
+              >
                 Tabaruc
               </button>
             </div>
