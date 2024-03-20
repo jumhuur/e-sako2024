@@ -146,7 +146,8 @@ const Xisaabcom = () => {
             <div className="btn_actions">
               {!AcLoading && (
                 <button onClick={XisaabiHada} className="xisaabi" type="submit">
-                  Xisaabi Hada
+                  <i className="fa-solid fa-square-root-variable"></i> Xisaabi
+                  Hada
                 </button>
               )}
 
@@ -156,7 +157,7 @@ const Xisaabcom = () => {
                 </button>
               )}
               <button onClick={allow_xisaab} className="ka_noqo" type="button">
-                Ka Noqo
+                <i className="fa-solid fa-ban"></i> Ka Noqo
               </button>
             </div>
           </form>

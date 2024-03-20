@@ -55,10 +55,10 @@ const JawaabSako = () => {
         </div>
         <div className="btns_jawaab">
           <button type="button">
-            <i className="fa-solid fa-print"></i> Print(A4)
+            <i className="fa-solid fa-print"></i> Daabaco (A4)
           </button>
           <button onClick={allow_Jawaab} className="ka_noqo" type="button">
-            Ka Noqo
+            <i className="fa-solid fa-ban"></i> Ka Noqo
           </button>
         </div>
       </motion.div>

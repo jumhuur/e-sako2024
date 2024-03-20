@@ -494,6 +494,38 @@ div.home {
         }
       }
     }
+    div.thanksreviews {
+      width: 100%;
+      height: 100%;
+      @include flex-box(row);
+      div.animationimage {
+        width: 100%;
+        height: 90px;
+        @include flex-box(column);
+        div {
+          margin: 10px 0px;
+          @include flex-box(column);
+          svg {
+            width: 25% !important;
+          }
+        }
+      }
+      div.qoraal {
+        width: 100%;
+        height: 60%;
+        //@include flex-box(row);
+        @include dynamic-flex(center, center, column, 0px);
+        h3 {
+          @include qoraal-p(1.2rem, $color4);
+          @include flex-box(column);
+          font-weight: 600;
+        }
+        p {
+          @include qoraal-p(1rem, $color4);
+          margin-top: 5px;
+        }
+      }
+    }
     button {
       @include btn-web(35%);
       margin: 4% 0px;
