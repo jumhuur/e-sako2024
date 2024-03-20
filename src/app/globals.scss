@@ -206,6 +206,9 @@ $color4: #fff;
 
 body {
   background-color: $main-c;
+  &.modelsHiden {
+    overflow: hidden;
+  }
 }
 
 * {
@@ -680,6 +683,27 @@ div.sponser {
   }
 }
 
+// ayad
+div.ayad {
+  width: 100%;
+  height: 125px;
+  background-color: $main-c;
+  @include dynamic-flex(center, center, column, 0px);
+  user-select: none;
+  &.in_info {
+    //background-color: $color1;
+    border-radius: 7px;
+    height: 60px;
+  }
+  div.nas_ayad {
+    width: 100%;
+    height: 100%;
+    padding: 10px 10px;
+    @include dynamic-flex(center, center, column, 0px);
+    user-select: none;
+  }
+}
+
 // Qiimayaasha
 div.qiimayasha {
   width: 100%;
@@ -850,6 +874,7 @@ div.ModelJawaab {
   position: fixed;
   @include flex-box(column);
   visibility: hidden;
+  overflow: hidden;
   &.active {
     visibility: visible;
   }
@@ -942,6 +967,60 @@ div.ModelJawaab {
             &:hover {
               background-color: $color2;
               color: $color4;
+            }
+          }
+        }
+      }
+    }
+    // Tabaruc Faahfaahin
+    div.tabaruc_compo {
+      width: 100%;
+      height: 100%;
+      //background-color: $color2;
+      div.info_tabaruc {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        //background-color: $btn_c_h;
+        @include dynamic-flex(center, center, row, 0px);
+        margin: 15px 0px;
+        div.infoHawlaha {
+          h2 {
+            @include Totile-H(1.5rem, $color2);
+            font-weight: 600;
+            padding: 5px 0px;
+          }
+
+          p {
+            padding: 5px 15px;
+            @include qoraal-p(1.2rem, $color4);
+            span {
+              color: $color2;
+              font-size: 1.5rem;
+            }
+          }
+        }
+        div.TabarucForm {
+          width: 100%;
+          height: 50%;
+          position: relative;
+          form {
+            width: 100%;
+            height: 100%;
+            //background-color: #004bd6;
+            @include dynamic-flex(center, center, column, 0px);
+            div.Paymets_style {
+              width: 50%;
+              background-color: $main-c;
+              border-radius: 15px;
+              @include dynamic-flex(center, center, row, 0px);
+              overflow: hidden;
+              padding: 5px 0px;
+              label {
+                width: calc(95% / 2);
+                height: 45px;
+                background-color: $color3;
+              }
             }
           }
         }

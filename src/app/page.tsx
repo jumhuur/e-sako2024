@@ -1,4 +1,5 @@
 import About from "@/components/AboutUs";
+import Ayad from "@/components/Ayad";
 import Footer from "@/components/Footer";
 import HomePage from "@/components/HomePage";
 import ModelTabaruc from "@/components/ModejTabaruc";
@@ -18,6 +19,7 @@ export default function Home() {
         <Nav />
         <HomePage />
         <Sponserer />
+        <Ayad />
         <Dhaqdhaqaaq />
         <About />
         <Reviews />

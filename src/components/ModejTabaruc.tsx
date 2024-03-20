@@ -1,6 +1,7 @@
 "use client";
 import { Usedata } from "@/context/XisaabContex";
 import { motion } from "framer-motion";
+import Tabaruc from "./Tabaruc";
 const ModelJawaab = () => {
   const { activeModelTabaruc, ModelT } = Usedata();
   return (
@@ -13,7 +14,7 @@ const ModelJawaab = () => {
           className={"ModelJawaab active"}
         >
           <div className="meesha_jawaabta">
-            <p>Model Tabaruc</p>
+            <Tabaruc />
           </div>
         </motion.div>
       )}

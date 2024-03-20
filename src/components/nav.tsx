@@ -36,7 +36,7 @@ const Nav = () => {
                 <Link href={"/"}>About</Link>
               </li>
               <li>
-                <Link href={"/"}>Xisaabinta</Link>
+                <Link href={"/"}>Tabarucaad</Link>
               </li>
             </ul>
             <div className="btn_actions">
