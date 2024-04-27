@@ -915,6 +915,13 @@ div.ModelJawaab {
         height: 60%;
         //@include flex-box(row);
         @include dynamic-flex(center, center, column, 0px);
+        overflow: hidden;
+        div.mufti {
+          width: 100%;
+        }
+        div.jawaab_rasmi {
+          width: 100%;
+        }
         div.shuruud_title {
           padding: 0px 10%;
           p.shuruudo {

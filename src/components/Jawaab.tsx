@@ -16,6 +16,8 @@ const JawaabSako = () => {
     Mufti,
     cancel,
   } = Usedata();
+
+  console.log(Shardi3.length);
   return (
     <>
       <motion.div className="thanksreviews">
@@ -46,9 +48,11 @@ const JawaabSako = () => {
             <p className="shuruudo">
               <i className="fa-solid fa-check"></i> {Shardi2}
             </p>
-            <p className="shuruudo">
-              <i className="fa-solid fa-check"></i> {Shardi3}
-            </p>
+            {Shardi3 && Shardi3.length && (
+              <p className="shuruudo">
+                <i className="fa-solid fa-check"></i> {Shardi3}
+              </p>
+            )}
           </div>
 
           {/* <p className="shuruudo">Qiimayntaada waan hellnay</p> */}
