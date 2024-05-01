@@ -30,13 +30,13 @@ const Nav = () => {
                 <Link href={"/"}>Home</Link>
               </li>
               <li>
-                <Link href={"/"}>Qiimayasha</Link>
+                <Link href={"#Qiimayasha"}>Qiimayasha</Link>
               </li>
               <li>
-                <Link href={"/"}>About</Link>
+                <Link href={"#About"}>About</Link>
               </li>
               <li>
-                <Link href={"/"}>Tabarucaad</Link>
+                <Link href={"#mashariic"}>Tabarucaad</Link>
               </li>
             </ul>
             <div className="btn_actions">

@@ -34,3 +34,21 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+      span.time {
+        padding: 5px 5px;
+        position: absolute;
+        @include flex-box(row);
+        z-index: 1;
+        right: 10px;
+        top: 15px;
+        border-radius: 5px;
+        background-color: rgba(27, 42, 78, 0.741);
+        color: $color4;
+        font-size: 12px;
+        .i {
+          color: $color4;
+          width: 25px;
+        }
+      }

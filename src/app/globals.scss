@@ -80,6 +80,12 @@ $color4: #fff;
   text-transform: capitalize;
 }
 
+@mixin icon($zise, $color) {
+  width: $zise;
+  color: $color;
+  margin-top: 2px;
+}
+
 @mixin Break-Points($Point) {
   @if ($Point == xsm) {
     @media (min-width: 200px) and (max-width: 576px) {
@@ -157,7 +163,6 @@ $color4: #fff;
   width: 100%;
   height: 100%;
   position: absolute;
-  top: 0;
   bottom: 0;
   left: 0;
   right: 0;
@@ -200,9 +205,9 @@ $color4: #fff;
   scrollbar-width: 10px;
 }
 
-// html {
-//   scroll-behavior: smooth;
-// }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   background-color: $main-c;
@@ -634,6 +639,7 @@ div.sponser {
   position: relative;
   @include flex-box(column);
   padding: 10px 0px;
+  scroll-margin-top: 5rem;
   div.text_sponser {
     width: 100%;
     height: 100%;
@@ -687,9 +693,9 @@ div.sponser {
 div.ayad {
   width: 100%;
   height: 125px;
-  background-color: $main-c;
   @include dynamic-flex(center, center, column, 0px);
   user-select: none;
+  scroll-margin-top: 5rem;
   &.in_info {
     //background-color: $color1;
     border-radius: 7px;
@@ -708,6 +714,7 @@ div.ayad {
 div.qiimayasha {
   width: 100%;
   height: 100%;
+  scroll-margin-top: 5rem;
   @include flex-box(column);
   padding: 2% 0px;
   margin-top: 3%;
@@ -1036,6 +1043,130 @@ div.ModelJawaab {
   }
 }
 
+// ABOUT
+div.about {
+  width: 100%;
+  height: 100%;
+  @include dynamic-flex(center, center, row, 12px);
+  div.qayb {
+    width: calc(85% / 2);
+    &.sawir {
+      img {
+        position: relative !important;
+      }
+    }
+
+    &.qoraal {
+      h2 {
+        @include qoraal-p(1.5, $btn_c);
+        margin-bottom: 15px;
+        text-align: left;
+      }
+
+      p {
+        @include qoraal-p(1.1rem, $color3);
+      }
+    }
+  }
+}
+
+// mashaariic
+div.mashariic {
+  width: 100%;
+  height: 100%;
+  padding: 20px 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  div.mashruuc {
+    padding: 15px 15px;
+    background-color: $color1;
+    border-radius: 5px;
+    height: 100%;
+    background: linear-gradient(180deg, $color1, $main-c);
+    div.image_mashruuc {
+      width: 100%;
+      height: 220px;
+      background-color: transparent;
+      border-radius: 15px;
+      position: relative;
+      overflow: hidden;
+      img {
+        object-fit: cover;
+      }
+      div.over_image {
+        @extend %over_velow_elm;
+        @include flex-box(column);
+        background-color: rgba(27, 42, 78, 0.741);
+        z-index: 1;
+        .i {
+          @include icon(18px, $color4);
+        }
+        span {
+          color: $color4;
+        }
+      }
+    }
+    div.title_desc {
+      margin: 15px 0px;
+      padding: 5px 5px;
+      width: 100%;
+      position: relative;
+      h2 {
+        @include qoraal-p(1.3rem, $btn_c);
+      }
+
+      p {
+        @include qoraal-p(1.1rem, $color4);
+      }
+    }
+    div.price_progress {
+      width: 100%;
+      position: relative;
+      div.lacagta {
+        padding: 5px 5px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        span {
+          @include qoraal-p(1.3rem, $color4);
+          .i {
+            @include icon(18px, $btn_c);
+          }
+        }
+      }
+      div.progress {
+        width: 95%;
+        height: 20px;
+        background-color: #4c40f726;
+        margin: 10px 15px;
+        border-radius: 17px;
+        overflow: hidden;
+        span {
+          width: 63%;
+          height: 100%;
+          display: block;
+          background-color: $btn_c;
+          @include dynamic-flex(center, flex-end, column, 0px);
+          color: $color4;
+          font-size: 10px;
+          font-weight: bold;
+          border-radius: 17px;
+          span {
+            width: 25px;
+            height: 25px;
+            background-color: $btn_c;
+            border-radius: 50%;
+            position: absolute;
+            border: solid 1px $color4;
+            padding: 3px 3px;
+          }
+        }
+      }
+    }
+  }
+}
+
 // Footer
 div.footer {
   width: 100%;
@@ -1073,33 +1204,6 @@ div.footer {
   div.info_footer {
     p.pp_foter {
       color: $btn_c;
-    }
-  }
-}
-
-// ABOUT
-div.about {
-  width: 100%;
-  height: 100%;
-  @include dynamic-flex(center, center, row, 12px);
-  div.qayb {
-    width: calc(85% / 2);
-    &.sawir {
-      img {
-        position: relative !important;
-      }
-    }
-
-    &.qoraal {
-      h2 {
-        @include qoraal-p(1.5, $btn_c);
-        margin-bottom: 15px;
-        text-align: left;
-      }
-
-      p {
-        @include qoraal-p(1.1rem, $color3);
-      }
     }
   }
 }
@@ -1434,8 +1538,6 @@ div.home div.hero div.thanksreviews div.animationimage span.qalad div svg {
   // hero section
   div.sponser div.sponser_com_logos div.mid {
     width: calc(80% / 2);
-    &.fido {
-    }
   }
 
   div.qiimayasha div.liiska_noocyada div.nooc {

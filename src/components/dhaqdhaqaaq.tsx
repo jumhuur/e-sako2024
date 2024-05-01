@@ -3,7 +3,7 @@ import Image from "next/image";
 const Dhaqdhaqaaq = () => {
   return (
     <>
-      <div className="qiimayasha">
+      <div id="About" className="qiimayasha">
         <div className="text_an_title">
           <h2>
             Maxay tahay shabakada E-sako sidayse ?

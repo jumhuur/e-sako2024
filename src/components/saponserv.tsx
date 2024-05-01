@@ -8,7 +8,7 @@ const Sponserer = () => {
   const date = new Date();
   return (
     <>
-      <div className="sponser">
+      <div id="Qiimayasha" className="sponser">
         <div className="text_sponser">
           <h2>Qiimaha Noocyada kala duwan ee dahabka</h2>
           <p>

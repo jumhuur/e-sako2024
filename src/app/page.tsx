@@ -2,6 +2,7 @@ import About from "@/components/AboutUs";
 import Ayad from "@/components/Ayad";
 import Footer from "@/components/Footer";
 import HomePage from "@/components/HomePage";
+import Mashaariic from "@/components/Mashaariic";
 import ModelTabaruc from "@/components/ModejTabaruc";
 import ModelJawaab from "@/components/ModelJawaab";
 import Dhaqdhaqaaq from "@/components/dhaqdhaqaaq";
@@ -20,6 +21,7 @@ export default function Home() {
         <HomePage />
         <Sponserer />
         <Ayad />
+        <Mashaariic />
         <Dhaqdhaqaaq />
         <About />
         <Reviews />

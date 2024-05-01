@@ -1,7 +1,7 @@
 import Image from "next/image";
 function Ayad() {
   return (
-    <div className="ayad">
+    <div id="mashariic" className="ayad">
       <div className="haye">
         <div className="nas_ayad">
           <Image
