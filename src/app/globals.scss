@@ -1081,7 +1081,7 @@ div.mashariic {
   div.mashruuc {
     padding: 15px 15px;
     background-color: $color1;
-    border-radius: 5px;
+    border-radius: 15px;
     height: 100%;
     background: linear-gradient(180deg, $color1, $main-c);
     div.image_mashruuc {
@@ -1104,6 +1104,19 @@ div.mashariic {
         }
         span {
           color: $color4;
+        }
+
+        button {
+          margin: 15px 15px;
+          margin-top: 25px;
+          @include btn-web(55%);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .i {
+            @include icon(18px, $color4);
+            margin-right: 5px;
+          }
         }
       }
     }
@@ -1415,6 +1428,10 @@ div.footer {
   div.home div.hero div.thanksreviews div.animationimage span.qalad div svg {
     width: 45% !important;
   }
+  // mashaariic
+  div.mashariic {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 @include Break-Points(sm) {
   .haye {
@@ -1479,46 +1496,12 @@ div.footer {
   div.home div.hero div.Xisaabcom div.section_xisaab form label {
     width: 80%;
   }
-}
 
-div.home div.hero div.thanksreviews div.qoraal {
-  width: 85%;
+  // mashaariic
+  div.mashariic {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
-
-div.home div.hero div.thanksreviews div.btns_jawaab button {
-  width: 37%;
-}
-
-div.home div.hero div.Xisaabcom div.section_xisaab form div.dahab_n label {
-  width: 85%;
-}
-
-div.home
-  div.hero
-  div.Xisaabcom
-  div.section_xisaab
-  form
-  div.dahab_n
-  select.n_dahab {
-  width: 85%;
-}
-
-div.home
-  div.hero
-  div.Xisaabcom
-  div.section_xisaab
-  form
-  div.checkh_box
-  div.doorasho
-  div.gaar {
-  width: calc(80% / 1);
-  padding: 5px 0px;
-}
-
-div.home div.hero div.thanksreviews div.animationimage span.qalad div svg {
-  width: 30% !important;
-}
-
 @include Break-Points(md) {
   .haye {
     max-width: 720px;
@@ -1610,6 +1593,10 @@ div.home div.hero div.thanksreviews div.animationimage span.qalad div svg {
   div.home div.hero div.thanksreviews div.animationimage span.qalad div svg {
     width: 30% !important;
   }
+  // mashaariic
+  div.mashariic {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 @include Break-Points(lg) {
   .haye {
@@ -1671,6 +1658,11 @@ div.home div.hero div.thanksreviews div.animationimage span.qalad div svg {
   div.home div.hero div.thanksreviews div.btns_jawaab button {
     width: 20%;
   }
+
+  // mashaariic
+  div.mashariic {
+    gap: 15px;
+  }
 }
 @include Break-Points(xlg) {
   .haye {
@@ -1693,6 +1685,11 @@ div.home div.hero div.thanksreviews div.animationimage span.qalad div svg {
       display: none;
     }
   }
+
+  // mashaariic
+  div.mashariic {
+    gap: 25px;
+  }
 }
 @include Break-Points(xxlg) {
   .xajiye,
@@ -1711,3 +1708,41 @@ div.home div.hero div.thanksreviews div.animationimage span.qalad div svg {
     }
   }
 }
+
+// div.home div.hero div.thanksreviews div.qoraal {
+//   width: 85%;
+// }
+
+// div.home div.hero div.thanksreviews div.btns_jawaab button {
+//   width: 37%;
+// }
+
+// div.home div.hero div.Xisaabcom div.section_xisaab form div.dahab_n label {
+//   width: 85%;
+// }
+
+// div.home
+//   div.hero
+//   div.Xisaabcom
+//   div.section_xisaab
+//   form
+//   div.dahab_n
+//   select.n_dahab {
+//   width: 85%;
+// }
+
+// div.home
+//   div.hero
+//   div.Xisaabcom
+//   div.section_xisaab
+//   form
+//   div.checkh_box
+//   div.doorasho
+//   div.gaar {
+//   width: calc(80% / 1);
+//   padding: 5px 0px;
+// }
+
+// div.home div.hero div.thanksreviews div.animationimage span.qalad div svg {
+//   width: 30% !important;
+// }

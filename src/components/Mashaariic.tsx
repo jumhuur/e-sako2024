@@ -3,6 +3,7 @@ import {
   CalendarDaysIcon,
   GiftIcon,
   CheckBadgeIcon,
+  HeartIcon,
 } from "@heroicons/react/24/solid";
 
 const Mashaariic = () => {
@@ -17,6 +18,9 @@ const Mashaariic = () => {
                 <CalendarDaysIcon className="i" />
                 10 Months ago
               </span>
+              <button type="button">
+                <HeartIcon className="i" /> Donte Now
+              </button>
             </div>
             {/* <span className="time">
              10 seconds ago
@@ -55,6 +59,9 @@ const Mashaariic = () => {
                 <CalendarDaysIcon className="i" />
                 10 Months ago
               </span>
+              <button type="button">
+                <HeartIcon className="i" /> Donte Now
+              </button>
             </div>
             {/* <span className="time">
              10 seconds ago
@@ -93,6 +100,9 @@ const Mashaariic = () => {
                 <CalendarDaysIcon className="i" />
                 10 Months ago
               </span>
+              <button type="button">
+                <HeartIcon className="i" /> Donte Now
+              </button>
             </div>
             {/* <span className="time">
              10 seconds ago
