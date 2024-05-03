@@ -25,6 +25,7 @@ const Rate = () => {
   return (
     <>
       <motion.div
+        
         transition={{ duration: 2, type: "spring" }}
         className="home"
         ref={Ref}

@@ -8,7 +8,7 @@ const Reviews = () => {
   const Data: number[] = [1, 2, 3, 4];
   return (
     <>
-      <div className="Reviews">
+      <div className="Reviews" id="rate">
         <div className="ciwaan">
           <h2>Maxay Ka Yidhaahdeen Dadku E-zako ?</h2>
           <p>fal celinta isticmalayaasha iyo qiimaytooda</p>

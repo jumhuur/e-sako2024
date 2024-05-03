@@ -33,10 +33,13 @@ const Nav = () => {
                 <Link href={"#Qiimayasha"}>Qiimayasha</Link>
               </li>
               <li>
+                <Link href={"#mashariic"}>Tabarucaad</Link>
+              </li>
+              <li>
                 <Link href={"#About"}>About</Link>
               </li>
               <li>
-                <Link href={"#mashariic"}>Tabarucaad</Link>
+                <Link href={"#rate"}>falcelin</Link>
               </li>
             </ul>
             <div className="btn_actions">
