@@ -19,6 +19,7 @@ export function DatacontextProvader({ children }) {
   const [dahab, setdahab] = useState(65.45);
   const [fido, setfido] = useState(0.75);
   const [ModelT, setModelT] = useState(false);
+  const [ModelProject, setModelProject] = useState(false);
 
   // diyaarinta qaybta sako xisaabinta
   const [Nooc, setNooc] = useState("Lacag");
@@ -48,6 +49,11 @@ export function DatacontextProvader({ children }) {
   const x_bilaa_kharash = 0.1;
   const x_kharaskha = 0.05;
   const isku_jir = 0.075;
+
+  const ModelProjectactive = () => {
+    setModelProject(!ModelProject);
+    console.log(ModelProject);
+  };
 
   const activeModelTabaruc = () => {
     setModelT(!ModelT);
@@ -779,6 +785,8 @@ export function DatacontextProvader({ children }) {
     cancel,
     ModelT,
     activeModelTabaruc,
+    ModelProjectactive,
+    ModelProject,
   };
 
   return <Datacontext.Provider value={value}>{children}</Datacontext.Provider>;

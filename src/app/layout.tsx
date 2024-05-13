@@ -4,6 +4,9 @@ import "./globals.scss";
 import "./css/all.min.css";
 import { Toaster } from "react-hot-toast";
 import { DatacontextProvader } from "../context/XisaabContex";
+import Nav from "@/components/nav";
+import Footer from "@/components/Footer";
+import ModelProjectDetails from "@/components/modelProDetails";
 const inter = Heebo({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
@@ -20,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="so-SO" dir="ltr">
       <DatacontextProvader>
         <>
           <body className={inter.className}>{children}</body>

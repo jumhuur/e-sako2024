@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import {
   CalendarDaysIcon,
@@ -5,8 +6,11 @@ import {
   CheckBadgeIcon,
   HeartIcon,
 } from "@heroicons/react/24/solid";
+import { Usedata } from "@/context/XisaabContex";
+import Link from "next/link";
 
 const Mashaariic = () => {
+  const { ModelProjectactive } = Usedata();
   return (
     <>
       <div className="mashariic">
@@ -18,7 +22,8 @@ const Mashaariic = () => {
                 <CalendarDaysIcon className="i" />
                 10 Months ago
               </span>
-              <button type="button">
+
+              <button type="button" onClick={ModelProjectactive}>
                 <HeartIcon className="i" /> Donte Now
               </button>
             </div>
