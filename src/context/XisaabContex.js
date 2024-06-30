@@ -4,12 +4,6 @@ export function Usedata() {
 }
 import React, { useContext, useEffect, useState } from "react";
 const Datacontext = React.createContext();
-
-// // interfaces and types
-// interface Datacontexttypes {
-//   children: React.ReactNode;
-// }
-
 export function DatacontextProvader({ children }) {
   const [xisaab, setxisaab] = useState(false);
   const [Jawaab, setJawaab] = useState(false);

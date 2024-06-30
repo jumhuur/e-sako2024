@@ -2,11 +2,9 @@ import type { Metadata } from "next";
 import { Heebo, Roboto } from "next/font/google";
 import "./globals.scss";
 import "./css/all.min.css";
+import { Providers } from "../redux/Providers";
 import { Toaster } from "react-hot-toast";
-import { DatacontextProvader } from "../context/XisaabContex";
-import Nav from "@/components/nav";
-import Footer from "@/components/Footer";
-import ModelProjectDetails from "@/components/modelProDetails";
+import { DatacontextProvader } from "@/context/XisaabContex";
 const inter = Heebo({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
@@ -24,11 +22,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="so-SO" dir="ltr">
-      <DatacontextProvader>
-        <>
-          <body className={inter.className}>{children}</body>
-        </>
-      </DatacontextProvader>
+      <Providers>
+        <DatacontextProvader>
+          <>
+            <body className={inter.className}>{children}</body>
+          </>
+        </DatacontextProvader>
+      </Providers>
     </html>
   );
 }
