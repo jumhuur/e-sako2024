@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Heebo, Roboto } from "next/font/google";
 import "./globals.scss";
-import "./css/all.min.css";
+import "./css/all.min.scss";
 import { Providers } from "../redux/Providers";
 import { Toaster } from "react-hot-toast";
 import { DatacontextProvader } from "@/context/XisaabContex";
